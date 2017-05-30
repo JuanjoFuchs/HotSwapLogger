@@ -11,10 +11,10 @@ namespace HotSwapLogger.Providers.FileAppender
             _path = path;
         }
 
-        void ILoggingProvider.Log(LogEvent logEvent)
+        void ILoggingProvider.Log(LogEvent logEvent, ILogEventFormatter formatter)
         {
             using (var sw = File.Exists(_path) ? File.AppendText(_path) : File.CreateText(_path))
-                sw.WriteLine($"[{logEvent.Level}] {logEvent.Message}");
+                sw.WriteLine(formatter.Format(logEvent));
         }
     }
 }

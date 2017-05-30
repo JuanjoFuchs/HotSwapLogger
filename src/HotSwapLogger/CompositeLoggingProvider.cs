@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace HotSwapLogger
@@ -9,9 +10,10 @@ namespace HotSwapLogger
 
         public CompositeLoggingProvider(params ILoggingProvider[] loggingProviders)
         {
-            _loggingProviders = loggingProviders.ToList();
+            _loggingProviders = loggingProviders?.ToList() ?? throw new ArgumentNullException(nameof(loggingProviders));
         }
 
-        void ILoggingProvider.Log(LogEvent logEvent) => _loggingProviders.ForEach(provider => provider.Log(logEvent));
+        void ILoggingProvider.Log(LogEvent logEvent, ILogEventFormatter formatter)
+            => _loggingProviders.ForEach(provider => provider.Log(logEvent, formatter));
     }
 }

@@ -2,7 +2,7 @@
 {
     public static class FileAppenderLoggerFactoryExtensions
     {
-        public static LoggerFactory AddFileAppender(this LoggerFactory loggerFactory, string path)
+        public static ILoggerFactory AddFileAppender(this ILoggerFactory loggerFactory, string path)
             => loggerFactory.AddProvider(new FileAppenderLoggingProvider(path));
     }
 }

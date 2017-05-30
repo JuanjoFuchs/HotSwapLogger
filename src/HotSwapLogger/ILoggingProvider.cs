@@ -2,6 +2,6 @@
 {
     public interface ILoggingProvider
     {
-        void Log(LogEvent logEvent);
+        void Log(LogEvent logEvent, ILogEventFormatter formatter);
     }
 }

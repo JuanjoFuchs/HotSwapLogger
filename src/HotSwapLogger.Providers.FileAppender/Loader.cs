@@ -2,9 +2,18 @@
 {
     public class Loader : ILoader
     {
-        void ILoader.Load(LoggerFactory loggerFactory)
+        void ILoader.Load(ILoggerFactory loggerFactory, ILoaderSettings loaderSettings)
         {
-            loggerFactory.AddFileAppender("./log.txt");
+            var settings = loaderSettings as Settings;
+            if (settings == null)
+                return;
+
+            loggerFactory.AddFileAppender(settings.Path);
         }
+    }
+
+    public class Settings : ILoaderSettings
+    {
+        public string Path { get; set; }
     }
 }

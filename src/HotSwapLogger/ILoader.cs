@@ -2,6 +2,10 @@
 {
     public interface ILoader
     {
-        void Load(LoggerFactory loggerFactory);
+        void Load(ILoggerFactory loggerFactory, ILoaderSettings loaderSettings);
+    }
+
+    public interface ILoaderSettings
+    {
     }
 }
