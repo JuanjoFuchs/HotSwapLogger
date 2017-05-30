@@ -6,7 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\HotSwapLogger.Providers.FileAppender\HotSwapLogger.Providers.FileAppender.csproj" />
+    <PackageReference Include="System.Runtime.Loader" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\src\HotSwapLogger\HotSwapLogger.csproj" />
   </ItemGroup>
 
