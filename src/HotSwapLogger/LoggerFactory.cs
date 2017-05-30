@@ -4,8 +4,9 @@ namespace HotSwapLogger
 {
     public class LoggerFactory : ILoggerFactory
     {
-        public ILoggingProvider LoggingProvider { get; private set; }
-        public ILogEventFormatter Formatter { get; private set; }
+        public ILoggingProvider Provider { get; private set; } = new NullProvider();
+
+        public ILogEventFormatter Formatter { get; } = new DefaultLogEventFormatter();
 
         public ILogger CreateLogger() => new Logger(this);
 
@@ -14,9 +15,9 @@ namespace HotSwapLogger
             if (loggingProvider == null)
                 throw new ArgumentNullException(nameof(loggingProvider));
 
-            LoggingProvider = LoggingProvider == null 
+            Provider = Provider == null 
                 ? loggingProvider 
-                : new CompositeLoggingProvider(LoggingProvider, loggingProvider);
+                : new CompositeLoggingProvider(Provider, loggingProvider);
 
             return this;
         }

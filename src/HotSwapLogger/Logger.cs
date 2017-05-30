@@ -4,13 +4,11 @@ namespace HotSwapLogger
 {
     internal class Logger : ILogger
     {
-        private readonly ILoggingProvider _provider;
-        private readonly ILogEventFormatter _formatter;
+        private readonly ILoggerFactory _loggerFactory;
 
         internal Logger(ILoggerFactory loggerFactory)
         {
-            _provider = loggerFactory?.LoggingProvider ?? throw new ArgumentNullException(nameof(loggerFactory.LoggingProvider));
-            _formatter = loggerFactory?.Formatter ?? new DefaultLogEventFormatter();
+            _loggerFactory = loggerFactory ?? throw new ArgumentNullException(nameof(loggerFactory));
         }
 
         void ILogger.Success(string message) => Log(LogLevel.Success, message);
@@ -20,6 +18,6 @@ namespace HotSwapLogger
         void ILogger.Error(string message) => Log(LogLevel.Error, message);
 
         private void Log(LogLevel logLevel, string message)
-            => _provider.Log(new LogEvent {Level = logLevel, Message = message}, _formatter);
+            => _loggerFactory.Provider.Log(new LogEvent {Level = logLevel, Message = message}, _loggerFactory.Formatter);
     }
 }

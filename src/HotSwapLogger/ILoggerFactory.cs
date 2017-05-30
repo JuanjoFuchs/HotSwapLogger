@@ -2,7 +2,7 @@ namespace HotSwapLogger
 {
     public interface ILoggerFactory
     {
-        ILoggingProvider LoggingProvider { get; }
+        ILoggingProvider Provider { get; }
         ILogEventFormatter Formatter { get; }
         ILogger CreateLogger();
         ILoggerFactory AddProvider(ILoggingProvider loggingProvider);
