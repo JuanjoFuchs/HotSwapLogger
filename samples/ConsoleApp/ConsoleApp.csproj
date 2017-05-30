@@ -1,8 +1,13 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp1.1</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\HotSwapLogger.Providers.FileAppender\HotSwapLogger.Providers.FileAppender.csproj" />
+    <ProjectReference Include="..\..\src\HotSwapLogger\HotSwapLogger.csproj" />
+  </ItemGroup>
 
 </Project>
