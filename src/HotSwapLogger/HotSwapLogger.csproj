@@ -45,6 +45,7 @@
     <Compile Include="ConsoleLoggingProvider.cs" />
     <Compile Include="DefaultLogEventFormatter.cs" />
     <Compile Include="ILoader.cs" />
+    <Compile Include="ILoaderSettings.cs" />
     <Compile Include="ILogEventFormatter.cs" />
     <Compile Include="ILogger.cs" />
     <Compile Include="ILoggerFactory.cs" />

@@ -4,8 +4,4 @@
     {
         void Load(ILoggerFactory loggerFactory, ILoaderSettings loaderSettings);
     }
-
-    public interface ILoaderSettings
-    {
-    }
 }

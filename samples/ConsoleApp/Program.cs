@@ -11,7 +11,7 @@ namespace ConsoleApp
 {
     class Program
     {
-        private const string AppsettingsDirectory = "AppSettings:Path";
+        private const string AppsettingsDirectory = "Path";
 
         static void Main(string[] args)
         {
@@ -55,6 +55,7 @@ namespace ConsoleApp
         {
             var defaultDirectory = Path.Combine(Directory.GetCurrentDirectory(), "Providers");
             var pathToWatch = settings?.Path ?? defaultDirectory;
+            Console.WriteLine($"Watching path: {pathToWatch}");
 
             var watcher = new FileSystemWatcherWrapper();
             var loader = new AssemblyLoaderWrapper();
