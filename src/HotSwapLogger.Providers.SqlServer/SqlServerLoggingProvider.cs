@@ -17,6 +17,7 @@ namespace HotSwapLogger.Providers.SqlServer
 
         void ILoggingProvider.Log(LogEvent logEvent, ILogEventFormatter formatter)
         {
+            // TODO: move I/O operations to another thread, this should just enqueue the events
             using (var db = new SqlConnection(_connectionString))
             {
                 var objectId = db.Query<string>("SELECT OBJECT_ID(@Table)", new { Table })

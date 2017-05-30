@@ -26,6 +26,7 @@ namespace HotSwapLogger.Loader
 
         private void ProviderAdded(ILoggerFactory loggerFactory, NameAndPath nameAndPath)
         {
+            // TODO: Maybe provider filtering for DLLs that follow certain name pattern?
             _loadedDomains.GetOrAdd(nameAndPath.Name, s => _loader.Load(loggerFactory, nameAndPath));
         }
 

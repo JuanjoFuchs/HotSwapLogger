@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Dapper, Version=1.50.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Dapper.1.50.2\lib\net451\Dapper.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Extensions.Configuration, Version=1.1.2.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.Extensions.Configuration.1.1.2\lib\netstandard1.1\Microsoft.Extensions.Configuration.dll</HintPath>
     </Reference>
@@ -164,20 +167,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="HotSwapLogger.Providers.FileAppender.dll.json" />
+    <None Include="HotSwapLogger.Providers.SqlServer.dll.json" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\HotSwapLogger.Loader\HotSwapLogger.Loader.csproj">
       <Project>{ABDE5B2A-3B2A-4F17-AF87-6CFDDF3B0D8A}</Project>
       <Name>HotSwapLogger.Loader</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\HotSwapLogger.Providers.FileAppender\HotSwapLogger.Providers.FileAppender.csproj">
-      <Project>{85A85C63-C21E-4184-BE29-3ADCE5A8CE19}</Project>
-      <Name>HotSwapLogger.Providers.FileAppender</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\HotSwapLogger.Providers.SqlServer\HotSwapLogger.Providers.SqlServer.csproj">
-      <Project>{4323ACA6-A6F4-4658-8043-DCA5898D6472}</Project>
-      <Name>HotSwapLogger.Providers.SqlServer</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\src\HotSwapLogger\HotSwapLogger.csproj">
       <Project>{30252CEF-DA16-4B7C-B716-72340F765559}</Project>

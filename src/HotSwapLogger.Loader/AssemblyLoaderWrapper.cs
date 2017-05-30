@@ -1,14 +1,13 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
-using System.Reflection;
 using Microsoft.Extensions.Configuration;
 
 namespace HotSwapLogger.Loader
 {
     public class AssemblyLoaderWrapper : IAssemblyLoader
     {
-        private readonly string _tempFolder = Path.Combine(Directory.GetCurrentDirectory(), "TEMP");
+        private readonly string _tempFolder = Directory.GetCurrentDirectory(); // Path.Combine(Directory.GetCurrentDirectory(), "TEMP");
 
         AppDomain IAssemblyLoader.Load(ILoggerFactory loggerFactory, NameAndPath nameAndPath)
         {
@@ -50,14 +49,10 @@ namespace HotSwapLogger.Loader
         {
             AppDomain.Unload(domain);
 
-            var copy = Path.Combine(_tempFolder, Path.GetFileName(nameAndPath.Path));
-            if (File.Exists(copy))
-                File.Delete(copy);
-        }
-
-        public class Proxy : MarshalByRefObject
-        {
-            public Assembly GetAssembly(string path) => Assembly.Load(File.ReadAllBytes(path));
+            // TODO: Delete unloaded file
+            //var copy = Path.Combine(_tempFolder, Path.GetFileName(nameAndPath.Path));
+            //if (File.Exists(copy))
+            //    File.Delete(copy);
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace HotSwapLogger.Providers.FileAppender
+﻿namespace HotSwapLogger.Providers.SqlServer
 {
     public class Loader : ILoader
     {
@@ -8,7 +8,7 @@
             if (settings == null)
                 return;
 
-            loggerFactory.AddFileAppender(settings.Path);
+            loggerFactory.AddSqlServer(settings.ConnectionString);
         }
     }
 }

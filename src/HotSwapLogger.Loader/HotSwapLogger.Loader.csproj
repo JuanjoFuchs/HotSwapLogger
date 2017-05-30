@@ -160,6 +160,7 @@
     <Compile Include="LoggerProviderWatcher.cs" />
     <Compile Include="NameAndPath.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Proxy.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HotSwapLogger\HotSwapLogger.csproj">
