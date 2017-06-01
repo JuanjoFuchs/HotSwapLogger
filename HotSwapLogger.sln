@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotSwapLogger.Providers.Sql
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotSwapLogger.Tests.Unit", "tests\HotSwapLogger.Tests.Unit\HotSwapLogger.Tests.Unit.csproj", "{CA743A33-E569-46F1-AAA8-6E2DF4239ECD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp.Akka", "samples\ConsoleApp.Akka\ConsoleApp.Akka.csproj", "{559195D3-F71E-4267-986E-6E2F9D2DCA18}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{CA743A33-E569-46F1-AAA8-6E2DF4239ECD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA743A33-E569-46F1-AAA8-6E2DF4239ECD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA743A33-E569-46F1-AAA8-6E2DF4239ECD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{559195D3-F71E-4267-986E-6E2F9D2DCA18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{559195D3-F71E-4267-986E-6E2F9D2DCA18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{559195D3-F71E-4267-986E-6E2F9D2DCA18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{559195D3-F71E-4267-986E-6E2F9D2DCA18}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,5 +68,6 @@ Global
 		{ABDE5B2A-3B2A-4F17-AF87-6CFDDF3B0D8A} = {8F4C8736-80D1-4917-93FA-7F937663A9A6}
 		{4323ACA6-A6F4-4658-8043-DCA5898D6472} = {8F4C8736-80D1-4917-93FA-7F937663A9A6}
 		{CA743A33-E569-46F1-AAA8-6E2DF4239ECD} = {CD0FFBAB-B005-4CC9-AD54-BD14619BBF7E}
+		{559195D3-F71E-4267-986E-6E2F9D2DCA18} = {D23E971D-F9EC-46C0-AFC5-DB87E28CD9DE}
 	EndGlobalSection
 EndGlobal

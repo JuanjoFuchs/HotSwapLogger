@@ -1,6 +1,10 @@
 Hot Swap Logger?
 
+# Basic Demo
 ![Demo](assets/demo.gif "Demo")
+
+# Using Akka as transport
+![Akka Demo](assets/demo_with_akka.gif "Demo with Akka")
 
 # Logger Configuration
 ```csharp
